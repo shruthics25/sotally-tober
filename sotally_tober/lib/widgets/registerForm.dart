@@ -4,7 +4,7 @@ import 'package:sotally_tober/sharedFunctions/validators.dart';
 import 'package:sotally_tober/sharedWidgets/textFormField.dart';
 
 class RegisterFormWidget extends StatefulWidget {
-  ViewModel _viewModel;
+  final ViewModel _viewModel;
   RegisterFormWidget(this._viewModel);
   @override
   _RegisterFormWidgetState createState() => _RegisterFormWidgetState();

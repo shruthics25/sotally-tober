@@ -31,7 +31,7 @@ class _DifficultWidgetState extends State<DifficultPage> {
                       padding: EdgeInsets.all(25.0),
                       child: Column(children: <Widget>[
 
-                       DifficultMathWidget(viewModel)
+                       DifficultMathWidget()
                             
                       ]))
                 ])));

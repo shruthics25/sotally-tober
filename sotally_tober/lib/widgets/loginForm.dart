@@ -6,7 +6,7 @@ import 'package:sotally_tober/sharedFunctions/validators.dart';
 import 'package:sotally_tober/sharedWidgets/textFormField.dart';
 
 class LoginFormWidget extends StatefulWidget {
-  ViewModel _viewModel;
+  final ViewModel _viewModel;
   LoginFormWidget(this._viewModel);
   @override
   _LoginFormWidgetState createState() => _LoginFormWidgetState();

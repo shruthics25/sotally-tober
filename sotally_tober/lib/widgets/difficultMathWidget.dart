@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sotally_tober/model/viewModel.dart';
 import 'package:sotally_tober/styles/commonStyle.dart';
 import 'dart:math';
 
 
 class DifficultMathWidget extends StatefulWidget {
-  ViewModel _viewModel;
-  DifficultMathWidget(this._viewModel);
   @override
   _DifficultMathWidgetState createState() => _DifficultMathWidgetState();
 }

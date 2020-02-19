@@ -3,11 +3,6 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:sotally_tober/model/app_state.dart';
 import 'package:sotally_tober/model/viewModel.dart';
-import 'package:sotally_tober/sharedWidgets/pageContainer.dart';
-import 'package:sotally_tober/widgets/alertDontSendEmail.dart';
-import 'package:sotally_tober/widgets/complexMathWidget.dart';
-import 'package:sotally_tober/widgets/difficultMathWidget.dart';
-import 'package:sotally_tober/widgets/readyToSendAnEmail.dart';
 import 'package:sotally_tober/widgets/simpleMathWidget.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -16,7 +11,6 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardWidgetState extends State<DashboardPage> {
-  final _pageContainer = PageContainer();
 
   @override
   Widget build(BuildContext context) {
@@ -35,21 +29,9 @@ class _DashboardWidgetState extends State<DashboardPage> {
                   SingleChildScrollView(
                       padding: EdgeInsets.all(25.0),
                       child: Column(children: <Widget>[
-                        viewModel.appState.stage == 0
-                            ? SimpleMathWidget(viewModel)
-                            : Text(""),
-                        viewModel.appState.stage == 1
-                            ? ComplexMathWidget(viewModel)
-                            : Text(""),
-                        viewModel.appState.stage == 2
-                            ? DifficultMathWidget(viewModel)
-                            : Text(""),
-                        viewModel.appState.stage == 3
-                            ? ReadyToSendAnEmailWidget(viewModel)
-                            : Text(""),
-                        viewModel.appState.stage == 4
-                            ? AlertDontSendAnEmailWidget(viewModel)
-                            : Text("")
+                       
+                            SimpleMathWidget(viewModel)
+                            
                       ]))
                 ])));
   }

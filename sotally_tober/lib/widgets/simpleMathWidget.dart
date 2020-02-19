@@ -4,7 +4,7 @@ import 'package:sotally_tober/styles/commonStyle.dart';
 import 'dart:math' show Random;
 
 class SimpleMathWidget extends StatefulWidget {
-  ViewModel _viewModel;
+  final ViewModel _viewModel;
   SimpleMathWidget(this._viewModel);
   @override
   _SimpleMathWidgetState createState() => _SimpleMathWidgetState();

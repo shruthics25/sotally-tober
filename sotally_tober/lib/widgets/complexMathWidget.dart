@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sotally_tober/model/viewModel.dart';
 import 'package:sotally_tober/styles/commonStyle.dart';
 import 'dart:math' show Random;
 
 class ComplexMathWidget extends StatefulWidget {
-  ViewModel _viewModel;
-  ComplexMathWidget(this._viewModel);
   @override
   _ComplexMathWidgetState createState() => _ComplexMathWidgetState();
 }

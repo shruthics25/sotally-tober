@@ -31,7 +31,7 @@ class _ComplexWidgetState extends State<ComplexPage> {
                       padding: EdgeInsets.all(25.0),
                       child: Column(children: <Widget>[
 
-                       ComplexMathWidget(viewModel)
+                       ComplexMathWidget()
                             
                       ]))
                 ])));
