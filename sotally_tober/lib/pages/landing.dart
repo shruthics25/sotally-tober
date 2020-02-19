@@ -13,12 +13,12 @@ class _LandingWidgetState extends State<LandingPage> {
   nextPage(model) {
     // Navigator.of(context).pushNamedAndRemoveUntil(
     //       '/dashboard', (Route<dynamic> route) => false);
-    if (model.appState.isLogin == true) {
+    if (model.appState.isLogin != true) {
       Navigator.of(context).pushNamedAndRemoveUntil(
-          '/dashboard', (Route<dynamic> route) => false);
+          '/login', (Route<dynamic> route) => false);
     } else {
       Navigator.of(context)
-          .pushNamedAndRemoveUntil('/login', (Route<dynamic> route) => false);
+          .pushNamedAndRemoveUntil('/dashboard', (Route<dynamic> route) => false);
     }
   }
 
