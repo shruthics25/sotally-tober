@@ -1,5 +1,5 @@
 const Mongoose = require('mongoose')
-const db = Mongoose.connect('mongodb+srv://shruthics:Spur2Win@cluster0-qhbk9.mongodb.net/cartfullDB?retryWrites=true&w=majority',
+const db = Mongoose.connect('mongodb+srv://shruthics:Spur2Win@cluster0-zhm5x.mongodb.net/sotallytoberDB?retryWrites=true&w=majority',
   { useNewUrlParser: true, useUnifiedTopology: true })
 const Schema = Mongoose.Schema
 Mongoose.set('useCreateIndex', true)
