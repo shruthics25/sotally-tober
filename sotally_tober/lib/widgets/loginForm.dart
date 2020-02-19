@@ -4,9 +4,10 @@ import 'package:sotally_tober/model/viewModel.dart';
 import 'package:sotally_tober/styles/commonStyle.dart';
 import 'package:sotally_tober/sharedFunctions/validators.dart';
 import 'package:sotally_tober/sharedWidgets/textFormField.dart';
-import 'package:sotally_tober/sharedWidgets/buttonContainer.dart';
 
 class LoginFormWidget extends StatefulWidget {
+  ViewModel _viewModel;
+  LoginFormWidget(this._viewModel);
   @override
   _LoginFormWidgetState createState() => _LoginFormWidgetState();
 }
@@ -18,12 +19,14 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
   final _emailcontroller = new TextEditingController();
   final _passwordcontroller = new TextEditingController();
   final _textWidget = new TextFormFieldWidget();
-  final _buttonWidget = new ButtonWidget();
-  final _viewModel = ViewModel();
 
   login() {
     if (_formKey.currentState.validate()) {
-      print(_viewModel);
+      Map loginPayload = {
+        "email": _emailcontroller.text,
+        "password": _passwordcontroller.text
+      };
+      widget._viewModel.userlogin(loginPayload,context);
     }
   }
 
@@ -48,6 +51,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
         validate: _validators.alphaNumericValidator,
         textcontroller: _passwordcontroller,
         icon: Icons.lock,
+        obscureText:true,
         hintText: "Password");
 
     return Form(
@@ -60,7 +64,15 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
           SizedBox(height: 20),
           _passwordField,
           SizedBox(height: 20),
-          _buttonWidget.getButtonWidget(onpressed: login, hintText: "LOGIN"),
+          ButtonTheme(
+            minWidth: 500.0,
+            height: 50.0,
+            child: RaisedButton(
+              onPressed: () => login(),
+              child: Padding(padding: EdgeInsets.all(15.0), child: Text("LOGIN")),
+              color: Colors.orange,
+              textColor: Colors.white,
+            )),
           SizedBox(height: 40),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
             Text(

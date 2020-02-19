@@ -34,7 +34,7 @@ class _RegisterWidgetState extends State<RegisterPage> {
                       SizedBox(
                         height: 20,
                       ),
-                      RegisterFormWidget()
+                      RegisterFormWidget(viewModel)
                     ],
                   ),
                 ),

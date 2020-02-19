@@ -6,7 +6,11 @@ import 'package:sotally_tober/model/app_state.dart';
 import 'package:sotally_tober/pages/login.dart';
 import 'package:sotally_tober/pages/register.dart';
 import 'package:sotally_tober/pages/landing.dart';
-// import 'package:sotally_tober/pages/dashboard.dart';
+import 'package:sotally_tober/pages/dashboard.dart';
+import 'package:sotally_tober/pages/alertpage.dart';
+import 'package:sotally_tober/pages/complex.dart';
+import 'package:sotally_tober/pages/difficult.dart';
+import 'package:sotally_tober/pages/soberpage.dart';
 
 
 class App extends StatelessWidget {
@@ -37,8 +41,16 @@ Route<dynamic> _getRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => LoginPage());
     case '/register':
       return MaterialPageRoute(builder: (_) => RegisterPage());
-    // case '/dashboard':
-    //   return MaterialPageRoute(builder: (_) => DasboardPage());
+    case '/dashboard':
+      return MaterialPageRoute(builder: (_) => DashboardPage());
+    case '/complex':
+      return MaterialPageRoute(builder: (_) => ComplexPage());
+    case '/difficult':
+      return MaterialPageRoute(builder: (_) => DifficultPage());
+    case '/alert':
+      return MaterialPageRoute(builder: (_) => AlertPagePage());
+    case '/sober':
+      return MaterialPageRoute(builder: (_) => SoberPagePage());
     default:
       return null;
   }

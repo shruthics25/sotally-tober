@@ -10,8 +10,18 @@ class CommonStyle {
   TextStyle cardText = TextStyle(
       fontFamily: fontFamily,
       fontWeight: FontWeight.bold,
-      fontSize: 15.0,
+      fontSize: 20.0,
       color: Colors.brown);
+    TextStyle number1Text = TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.bold,
+      fontSize: 25.0,
+      color: Colors.black);
+       TextStyle number2Text = TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.bold,
+      fontSize: 25.0,
+      color: Colors.red);
 
 
 }

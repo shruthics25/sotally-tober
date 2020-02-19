@@ -33,7 +33,7 @@ class _LoginWidgetState extends State<LoginPage> {
                       SizedBox(
                         height: 20,
                       ),
-                      LoginFormWidget()
+                      LoginFormWidget(viewModel)
                     ],
                   ),
                 ),

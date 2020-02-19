@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sotally_tober/model/viewModel.dart';
 import 'package:sotally_tober/sharedFunctions/validators.dart';
 import 'package:sotally_tober/sharedWidgets/textFormField.dart';
-import 'package:sotally_tober/sharedWidgets/buttonContainer.dart';
 
 class RegisterFormWidget extends StatefulWidget {
+  ViewModel _viewModel;
+  RegisterFormWidget(this._viewModel);
   @override
   _RegisterFormWidgetState createState() => _RegisterFormWidgetState();
 }
@@ -18,10 +20,18 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
   final _addresscontroller = new TextEditingController();
   final _phonenumbercontroller = new TextEditingController();
   final _textWidget = new TextFormFieldWidget();
-  final _buttonWidget = new ButtonWidget();
 
   register() {
-    if (_formKey.currentState.validate()) {}
+    if (_formKey.currentState.validate()) {
+      Map registerPayload = {
+        "name": _namecontroller.text,
+        "email": _emailcontroller.text,
+        "password": _passwordcontroller.text,
+        "address": _addresscontroller.text,
+        "phoneNumber": _phonenumbercontroller.text
+      };
+      widget._viewModel.register(registerPayload,context);
+    }
   }
 
   @override
@@ -36,12 +46,14 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
         validate: _validators.alphaNumericValidator,
         textcontroller: _passwordcontroller,
         icon: Icons.lock,
+        obscureText:true,
         hintText: "Password");
 
     final _confrimpasswordField = _textWidget.getTextWidget(
         validate: _validators.alphaNumericValidator,
         textcontroller: _confirmpasswordcontroller,
         icon: Icons.lock,
+        obscureText:true,
         hintText: "Confirm Password");
 
     final _nameField = _textWidget.getTextWidget(
@@ -80,8 +92,15 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
           SizedBox(height: 20),
           _addressField,
           SizedBox(height: 20),
-          _buttonWidget.getButtonWidget(
-              onpressed: () => register(), hintText: "REGISTER"),
+           ButtonTheme(
+            minWidth: 500.0,
+            height: 50.0,
+            child: RaisedButton(
+              onPressed: () => register(),
+              child: Padding(padding: EdgeInsets.all(15.0), child: Text("REGISTER")),
+              color: Colors.orange,
+              textColor: Colors.white,
+            )),
         ],
       ),
     );

@@ -11,7 +11,8 @@ class LandingPage extends StatefulWidget {
 
 class _LandingWidgetState extends State<LandingPage> {
   nextPage(model) {
-    print("isloggedin : ${model.appState.isLogin}");
+    // Navigator.of(context).pushNamedAndRemoveUntil(
+    //       '/dashboard', (Route<dynamic> route) => false);
     if (model.appState.isLogin == true) {
       Navigator.of(context).pushNamedAndRemoveUntil(
           '/dashboard', (Route<dynamic> route) => false);
